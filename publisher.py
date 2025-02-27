@@ -7,9 +7,12 @@ uri = 'ws://localhost:8001'
 
 def send_as_client():
     with connect(uri) as websocket:
-        msg = input('Msg to send: ')
+        topic = input('Topic: ')
+        msg = input('Message: ')
+        print()
+
         d = {
-            'topic': 'sports',
+            'topic': topic,
             'message': msg
         }
 

@@ -8,10 +8,7 @@ topics = defaultdict(list)
 
 
 async def handler(websocket):
-    print('In handler')
     async for message in websocket:
-        print(message)
-
         json_msg = json.loads(message)
 
         if 'topic' in json_msg:
@@ -20,9 +17,10 @@ async def handler(websocket):
 
             topics[topic].append(msg)
 
-            print('\n-- TOPIC DICT IS NOW ---')
-            print(dict(topics))
-            print('------------------------\n')
+            print('\n' * 10)
+
+            for topic, msg_list in topics.items():
+                print(f'{topic}:\t{msg_list}')
 
 
 async def main():
