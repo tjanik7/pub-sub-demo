@@ -8,10 +8,9 @@ topics = defaultdict(list)
 
 
 async def handler(websocket):
-    print('we in da handler')
+    print('In handler')
     async for message in websocket:
         print(message)
-        # await websocket.send(f'You sent "{message}"')
 
         json_msg = json.loads(message)
 

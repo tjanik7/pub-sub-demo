@@ -15,9 +15,6 @@ def send_as_client():
 
         websocket.send(json.dumps(d))
 
-        # greeting = websocket.recv()
-        # print(f'Response: {greeting}')
-
 
 if __name__ == '__main__':
     while True:
